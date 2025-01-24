@@ -43,7 +43,7 @@ export default function Factpage() {
     <>
       <section className="fact-page flex flex-col items-center">
         {/* search icon */}
-        <div className="search fixed right-4 top-4 h-[3.5rem] w-[3.5rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem]">
+        <div className="search fixed right-4 top-4 h-[3.5rem] w-[3.5rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
           <FaSearch className="search-icon text-[2.1rem] text-amber-700 sm:text-[2rem]" />
         </div>
         <div className="animal-name w-fit h-16 flex items-center justify-center fixed top-10 shadow-slate-500 bg-white rounded-[1rem] p-2">
@@ -51,11 +51,10 @@ export default function Factpage() {
             {facts[currentIndex].name}
           </h4>
         </div>
-        <div className="animal-image h-[20rem] w-5/6 border-amber-500 border-4 rounded-full mt-16 sm:h-64 sm:w-64 flex items-center justify-center sm: sm:mb-[2rem]">
+        <div className="animal-image h-[20rem] border-4 w-5/6 border-amber-500  rounded-full mt-16 sm:h-64 sm:w-64 flex items-center justify-center sm: sm:mb-[2rem]">
           <img
-            src={facts[currentIndex]["image"]}
-            style={{ width: "300px", height: "auto", borderRadius: "10px" }}
-            // className="w-[95%] h-[95%] rounded-full"
+            src={`http://localhost:3000/${facts[currentIndex]["image"]}`}
+            className="w-[90%] h-[90%] rounded-full"
             alt={facts[currentIndex]["image"]}
           />
         </div>
@@ -64,7 +63,7 @@ export default function Factpage() {
           <h3 className="dyk mt-44 text-[2rem] font-[800] mb-3 text-amber-950 sm:mt-[1rem]">
             Did You Know
           </h3>
-          <div className="fact-container h-[7rem] w-[100%] pt-2 px-2 rounded-[1rem] shadow-2xl">
+          <div className="fact-container h-[7rem] w-[100%] pt-2 px-2 rounded-[1rem]">
             <p className="text-[1.3rem] font-semibold text-center">
               {facts[currentIndex].fact}
             </p>
@@ -73,19 +72,19 @@ export default function Factpage() {
           <div className="icons-btn flex justify-between mt-[1rem] w-[100%] sm:px-[2.7rem] sm:pb-[1rem]">
             <div className="icons w-[4rem] h-[2rem] flex self-end justify-between">
               <FaSave
-                className="text-[1.6rem] left-[1rem] text-amber-700 cursor-pointer"
+                className="text-[1.6rem] left-[1rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
                 title="save fact"
               />
               <FaHeart
                 style={{ color: color, transition: "color 0.3s ease" }}
                 onClick={handleClick}
-                className="text-[1.6rem] bottom-[1rem] left-[3.5rem]  cursor-pointer"
+                className="text-[1.6rem] bottom-[1rem] left-[3.5rem]  cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 "
                 title="like"
               />
             </div>
             <button
               onClick={changeFact}
-              className="bg-amber-700 h-[3rem] w-[7rem] text-white font-semibold cursor-pointer hover:brightness-120 rounded-[0.5rem] sm:h-[2.5rem] sm:cursor-pointer"
+              className="bg-amber-700 h-[3rem] w-[7rem] text-white hover:brightness-125 font-semibold active:scale-90 transition-transform duration-150 cursor-pointer rounded-[0.5rem] sm:h-[2.5rem] sm:cursor-pointer"
             >
               New Fact
             </button>
