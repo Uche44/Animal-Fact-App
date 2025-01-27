@@ -12,7 +12,8 @@ export default function Factpage() {
   const [isLoading, setIsLoading] = useState(true);
   const [color, setColor] = useState("#92400E");
   const [showSearchPage, setShowSearchPage] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  // const [filteredFacts, setFilteredFacts] = useState([]);
+
   useEffect(() => {
     async function getFact() {
       try {
@@ -20,6 +21,7 @@ export default function Factpage() {
         const facts = await response.json();
 
         if (facts && facts.length) setFacts(facts);
+        setFilteredFacts(facts);
         setIsLoading(false);
       } catch (error) {
         console.log("error", error);
@@ -28,6 +30,7 @@ export default function Factpage() {
     }
     getFact();
   }, [facts]);
+  // facts filter
 
   const handleClick = () => {
     setColor((prevColor) => (prevColor == "#92400E" ? "#EC4899" : "#92400E"));
@@ -50,7 +53,10 @@ export default function Factpage() {
   return (
     <>
       {showSearchPage ? (
-        <SearchPage onBack={goToFactPage} />
+        <SearchPage
+          onBack={goToFactPage}
+          // facts={facts}
+        />
       ) : (
         <section className="fact-page flex flex-col items-center">
           {/* search icon */}
