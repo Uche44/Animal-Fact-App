@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { FaArrowLeft, FaSave, FaHeart } from "react-icons/fa";
-
+import { FaArrowLeft } from "react-icons/fa";
+// import { SaveIcon, HeartIcon } from "./Icons";
 const SearchPage = ({
   onBack,
   facts,
   filteredFacts,
   setFilteredFacts,
-  currentIndex,
-  setCurrentIndex,
+  isLiked,
+  setIsLiked,
   changeFact,
-  // setSelectedCategory,
-  // selectedCategory,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [filterText, setFilterText] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
-  useEffect(() => {});
+  // const [isScrolled, setIsScrolled] = useState(false);
+
   const types = [
     "All",
     "mammals",
@@ -46,64 +45,67 @@ const SearchPage = ({
   useEffect(() => {
     handleFilter();
   }, [filterText, facts]);
+
+  // style for save icon
+  // const saveStyle = { fontSize: "1rem", position: "absolute" };
+  //blrred div
+
+  // <div
+  //   className="{`fixed top-0 h-[3.5rem] w-full ml-0 mb-[2rem] ${isScrolled? 'bg-transparent backdrop-blur-md' : 'bg-amber-300'}`}"
+  //   role="banner"
+  // >
+  // to handle header color
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 50) {
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   return (
     <>
       {hasSearched ? (
-        <section className="h-[100vh] w-full py-6 px-4 bg-white">
+        <section className="min-h-full w-full py-6 bg-amber-100">
           {/* Search header with icon */}
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-xl font-bold text-amber-800">
+          <div
+            className="fixed top-0 z-10 h-[3.5rem] bg-amber-300 w-full ml-0 mb-[2rem]"
+            role="banner"
+          >
+            <h2 className="text-2xl mt-4 font-bold text-amber-800 ml-4 ">
               {inputValue.toUpperCase()}
             </h2>
             <FaSearch
-              className="text-[2rem] text-amber-700 cursor-pointer hover:text-amber-500"
+              className="text-[2rem] text-amber-700 cursor-pointer absolute top-4 right-4 hover:text-amber-500"
               title="Search"
               onClick={() => setHasSearched(false)}
             />
           </div>
 
-          {/* Search bar */}
-          {/* <div className="search h-[3.5rem] w-full flex items-center gap-4 mb-4">
-            <input
-              className="h-full w-full rounded-full px-4 text-[1.1rem] bg-amber-300 text-amber-700 font-[500]"
-              type="text"
-              placeholder="Search by category"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value.toLowerCase())}
-            />
-          </div> */}
-
-          {/* Filter buttons */}
-          {/* <div className="mt-5 w-full h-fit grid grid-cols-3 grid-rows-2 gap-1">
-            {types.map((type, index) => (
-              <button
-                key={index}
-                className="h-[3.3rem] w-full text-amber-700 font-bold text-[18px] rounded-[10px] border-none hover:bg-amber-300 bg-amber-200 active:scale-90 transition-transform duration-150"
-                value={type}
-                onClick={() => setFilterText(type.toLowerCase())}
-              >
-                {type}
-              </button>
-            ))}
-          </div> */}
-
           {/* Filtered facts display */}
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="mt-6 mx-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredFacts.map((fact, index) => (
               <div
                 key={index}
-                className="fact-card p-4 rounded-lg shadow-md border border-amber-300 bg-white"
+                className="fact-card p-4 rounded-lg shadow-md border border-amber-300 bg-white relative"
               >
                 <img
                   src={`http://localhost:3000/${fact.image}`}
                   alt={fact.name}
                   className="w-full h-48 object-cover rounded-lg mb-2"
-                  onError={(e) => (e.target.src = "fallback-image-url.jpg")}
                 />
-                <h4 className="text-lg font-bold text-amber-800 mb-2">
+                <h4 className="text-[25px] font-bold text-amber-800 mb-2">
                   {fact.name}
                 </h4>
                 <p className="text-sm text-amber-700">{fact.fact}</p>
+                {/* <SaveIcon />
+                <HeartIcon
+                  isLiked={isLiked}
+                  setIsLiked={setIsLiked}
+                /> */}
               </div>
             ))}
           </div>

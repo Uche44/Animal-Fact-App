@@ -1,7 +1,7 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
-import { FaSearch, FaHeart, FaSave } from "react-icons/fa";
-
+import { FaSearch } from "react-icons/fa";
+import { SaveIcon, HeartIcon } from "./Icons";
 import SearchPage from "./SearchPage";
 // my api key for api ninja   PkZK8NV+pP+PaeVYU8E2ig==jHkb6rWkBfo8Lmy6
 
@@ -10,10 +10,10 @@ export default function Factpage() {
   const [facts, setFacts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [color, setColor] = useState("#92400E");
+
   const [showSearchPage, setShowSearchPage] = useState(false);
   const [filteredFacts, setFilteredFacts] = useState([]);
-
+  const [isLiked, setIsLiked] = useState(false);
   useEffect(() => {
     async function getFact() {
       try {
@@ -32,14 +32,15 @@ export default function Factpage() {
   }, [facts]);
   // facts filter
 
-  const handleClick = () => {
-    setColor((prevColor) => (prevColor == "#92400E" ? "#EC4899" : "#92400E"));
-  };
+  // const handleClick = () => {
+  // setColor((prevColor) => (prevColor == "#92400E" ? "#EC4899" : "#92400E"));
+  // };
   const changeFact = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % facts.length);
     if (facts.length === 0) {
       return <p>No facts available</p>;
     }
+    setIsLiked(false);
   };
   if (isLoading) {
     return <p>Loading facts...</p>;
@@ -50,6 +51,9 @@ export default function Factpage() {
   const goToFactPage = () => {
     setShowSearchPage(false);
   };
+
+  // style for save button in hsa searched component
+  // const saveStyle = { fontSize: "1rem", position: "absolute" };
   return (
     <>
       {showSearchPage ? (
@@ -58,11 +62,9 @@ export default function Factpage() {
           facts={facts}
           filteredFacts={filteredFacts}
           setFilteredFacts={setFilteredFacts}
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
           onClick={changeFact}
-          // selectedCategory={selectedCategory}
-          // setSelectedCategory={setSelectedCategory}
+          isLiked={isLiked}
+          setIsLiked={setIsLiked}
         />
       ) : (
         <section className="fact-page flex flex-col items-center">
@@ -98,15 +100,10 @@ export default function Factpage() {
 
             <div className="icons-btn flex justify-between mt-[1rem] w-[100%] sm:px-[2.7rem] sm:pb-[1rem]">
               <div className="icons w-[4rem] h-[2rem] flex self-end justify-between">
-                <FaSave
-                  className="text-[1.6rem] left-[1rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
-                  title="save fact"
-                />
-                <FaHeart
-                  style={{ color: color, transition: "color 0.3s ease" }}
-                  onClick={handleClick}
-                  className="text-[1.6rem] bottom-[1rem] left-[3.5rem]  cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 "
-                  title="like"
+                <SaveIcon />
+                <HeartIcon
+                  isLiked={isLiked}
+                  setIsLiked={setIsLiked}
                 />
               </div>
               <button
