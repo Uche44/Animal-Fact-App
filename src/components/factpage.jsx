@@ -1,7 +1,7 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
-import { FaSearch } from "react-icons/fa";
-import { SaveIcon, HeartIcon } from "./Icons";
+import { FaSearch, FaHeart, FaSave, FaDownload } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import SearchPage from "./SearchPage";
 // my api key for api ninja   PkZK8NV+pP+PaeVYU8E2ig==jHkb6rWkBfo8Lmy6
 
@@ -30,11 +30,7 @@ export default function Factpage() {
     }
     getFact();
   }, [facts]);
-  // facts filter
 
-  // const handleClick = () => {
-  // setColor((prevColor) => (prevColor == "#92400E" ? "#EC4899" : "#92400E"));
-  // };
   const changeFact = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % facts.length);
     if (facts.length === 0) {
@@ -51,9 +47,11 @@ export default function Factpage() {
   const goToFactPage = () => {
     setShowSearchPage(false);
   };
+  const handleLike = () => {
+    setIsLiked(true);
+  };
 
-  // style for save button in hsa searched component
-  // const saveStyle = { fontSize: "1rem", position: "absolute" };
+  const navigate = useNavigate();
   return (
     <>
       {showSearchPage ? (
@@ -62,17 +60,23 @@ export default function Factpage() {
           facts={facts}
           filteredFacts={filteredFacts}
           setFilteredFacts={setFilteredFacts}
-          onClick={changeFact}
           isLiked={isLiked}
           setIsLiked={setIsLiked}
         />
       ) : (
         <section className="fact-page flex flex-col items-center">
+          <div className="save fixed right-4 top-[4.5rem] h-[3rem] w-[3rem] bg-white rounded-[10px] flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
+            <FaSave
+              className="text-[1.6rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
+              title="saved facts"
+              onClick={() => navigate("./SavedFact.jsx")}
+            />
+          </div>
           {/* search icon */}
-          <div className="search fixed right-4 top-4 h-[3.5rem] w-[3.5rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
+          <div className="search fixed right-4 top-4 h-[3rem] w-[3rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
             <FaSearch
               onClick={goToSearchPage}
-              className="search-icon text-[2.1rem] text-amber-700 sm:text-[2rem]"
+              className="search-icon text-[1.6rem] text-amber-700 sm:text-[2rem]"
             />
           </div>
           <div className="animal-name w-fit h-16 flex items-center justify-center fixed top-10 shadow-slate-500 bg-white rounded-[1rem] p-2">
@@ -100,10 +104,18 @@ export default function Factpage() {
 
             <div className="icons-btn flex justify-between mt-[1rem] w-[100%] sm:px-[2.7rem] sm:pb-[1rem]">
               <div className="icons w-[4rem] h-[2rem] flex self-end justify-between">
-                <SaveIcon />
-                <HeartIcon
-                  isLiked={isLiked}
-                  setIsLiked={setIsLiked}
+                <FaDownload
+                  className="text-[1.6rem] left-[1rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
+                  title="save fact"
+                />
+                <FaHeart
+                  onClick={handleLike}
+                  style={{
+                    color: isLiked ? "#EC4899" : "#92400E",
+                    transition: "color 0.3s ease",
+                  }}
+                  className="text-[1.6rem] bottom-[1rem] left-[3.5rem]  cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 "
+                  title="like"
                 />
               </div>
               <button

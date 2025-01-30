@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa";
-// import { SaveIcon, HeartIcon } from "./Icons";
+import { FaArrowLeft, FaHeart, FaSave } from "react-icons/fa";
+
 const SearchPage = ({
   onBack,
   facts,
@@ -9,7 +9,6 @@ const SearchPage = ({
   setFilteredFacts,
   isLiked,
   setIsLiked,
-  changeFact,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [filterText, setFilterText] = useState("");
@@ -100,12 +99,20 @@ const SearchPage = ({
                 <h4 className="text-[25px] font-bold text-amber-800 mb-2">
                   {fact.name}
                 </h4>
-                <p className="text-sm text-amber-700">{fact.fact}</p>
-                {/* <SaveIcon />
-                <HeartIcon
-                  isLiked={isLiked}
-                  setIsLiked={setIsLiked}
-                /> */}
+                <p className="text-sm text-amber-700 mb-6">{fact.fact}</p>
+                <FaHeart
+                  onClick={() => setIsLiked(true)}
+                  style={{
+                    color: isLiked ? "#EC4899" : "#92400E",
+                    transition: "color 0.3s ease",
+                  }}
+                  className="text-[1.3rem] cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 absolute bottom-4 right-11"
+                  title="like"
+                />
+                <FaSave
+                  className="text-[1.3rem]  text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 absolute bottom-4 right-4"
+                  title="save fact"
+                />
               </div>
             ))}
           </div>
