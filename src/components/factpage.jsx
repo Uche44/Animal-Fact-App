@@ -14,6 +14,7 @@ export default function Factpage() {
   const [showSearchPage, setShowSearchPage] = useState(false);
   const [filteredFacts, setFilteredFacts] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     async function getFact() {
       try {
@@ -50,8 +51,6 @@ export default function Factpage() {
   const handleLike = () => {
     setIsLiked(true);
   };
-
-  const navigate = useNavigate();
   return (
     <>
       {showSearchPage ? (
