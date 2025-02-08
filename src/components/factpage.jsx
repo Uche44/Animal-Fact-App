@@ -1,8 +1,9 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
 import { FaSearch, FaHeart, FaSave, FaDownload } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import SearchPage from "./SearchPage";
+import { useSavedFacts } from "../context/SavedFactsContext";
+import toast from "react-hot-toast";
 // my api key for api ninja   PkZK8NV+pP+PaeVYU8E2ig==jHkb6rWkBfo8Lmy6
 
 // entire page
@@ -14,6 +15,7 @@ export default function Factpage() {
   const [showSearchPage, setShowSearchPage] = useState(false);
   const [filteredFacts, setFilteredFacts] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
+  const { saveFact } = useSavedFacts();
   const navigate = useNavigate();
   useEffect(() => {
     async function getFact() {
@@ -50,6 +52,15 @@ export default function Factpage() {
   };
   const handleLike = () => {
     setIsLiked(true);
+  };
+  const handleSave = () => {
+    if (facts.length > 0) {
+      saveFact(facts[currentIndex]);
+      toast.success("Fact Saved");
+      console.log("fact saved");
+    } else {
+      console.error("save failed");
+    }
   };
   return (
     <>
@@ -104,6 +115,7 @@ export default function Factpage() {
             <div className="icons-btn flex justify-between mt-[1rem] w-[100%] sm:px-[2.7rem] sm:pb-[1rem]">
               <div className="icons w-[4rem] h-[2rem] flex self-end justify-between">
                 <FaDownload
+                  onClick={handleSave}
                   className="text-[1.6rem] left-[1rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
                   title="save fact"
                 />
