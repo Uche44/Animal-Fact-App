@@ -5,7 +5,7 @@ export const useSavedFacts = () => useContext(SavedFactsContext);
 
 export const SavedFactsProvider = ({ children }) => {
   const [savedFacts, setSavedFacts] = useState(() => {
-    const storedFacts = JSON.parse(localStorage.getItem("savedFacts"));
+    const storedFacts = localStorage.getItem("savedFacts");
     return storedFacts ? JSON.parse(storedFacts) : [];
   });
 
@@ -27,7 +27,9 @@ export const SavedFactsProvider = ({ children }) => {
     if (!savedFacts.some((saved) => saved.fact === fact.fact)) {
       const updatedFacts = [...savedFacts, fact];
       setSavedFacts(updatedFacts);
-      localStorage.setItem("savedFacts", JSON.stringify(updatedFacts));
+      // localStorage.setItem("savedFacts", JSON.stringify(updatedFacts));
+    } else {
+      toast.error("Fact already saved!");
     }
   };
 
@@ -36,7 +38,7 @@ export const SavedFactsProvider = ({ children }) => {
       (fact) => fact.fact !== factToRemove.fact
     );
     setSavedFacts(updatedFacts);
-    localStorage.setItem("savedFacts", JSON.stringify(updatedFacts));
+    // localStorage.setItem("savedFacts", JSON.stringify(updatedFacts));
     toast.error("Fact removed!");
     console.log("fact unsaved");
   };
