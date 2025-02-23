@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { FaArrowLeft, FaHeart, FaSave } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 
 const SearchPage = ({
   onBack,
@@ -13,7 +13,7 @@ const SearchPage = ({
   const [inputValue, setInputValue] = useState("");
   const [filterText, setFilterText] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
-  // const [isScrolled, setIsScrolled] = useState(false);
+
 
   const types = [
     "All",
@@ -45,26 +45,6 @@ const SearchPage = ({
     handleFilter();
   }, [filterText, facts]);
 
-  // style for save icon
-  // const saveStyle = { fontSize: "1rem", position: "absolute" };
-  //blrred div
-
-  // <div
-  //   className="{`fixed top-0 h-[3.5rem] w-full ml-0 mb-[2rem] ${isScrolled? 'bg-transparent backdrop-blur-md' : 'bg-amber-300'}`}"
-  //   role="banner"
-  // >
-  // to handle header color
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 50) {
-  //       setIsScrolled(true);
-  //     } else {
-  //       setIsScrolled(false);
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
   return (
     <>
       {hasSearched ? (
@@ -92,7 +72,8 @@ const SearchPage = ({
                 className="fact-card p-4 rounded-lg shadow-md border border-amber-300 bg-white relative"
               >
                 <img
-                  src={`http://localhost:3000/${fact.image}`}
+                  // src={`http://localhost:3000/${fact.image}`}
+                  src={fact.image}
                   alt={fact.name}
                   className="w-full h-48 object-cover rounded-lg mb-2"
                 />
@@ -100,8 +81,8 @@ const SearchPage = ({
                   {fact.name}
                 </h4>
                 <p className="text-sm text-amber-700 mb-6">{fact.fact}</p>
-                <FaHeart
-                  onClick={() => setIsLiked(true)}
+                {/* <FaHeart
+                  onClick={(e) => setIsLiked(true)}
                   style={{
                     color: isLiked ? "#EC4899" : "#92400E",
                     transition: "color 0.3s ease",
@@ -112,7 +93,7 @@ const SearchPage = ({
                 <FaSave
                   className="text-[1.3rem]  text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 absolute bottom-4 right-4"
                   title="save fact"
-                />
+                /> */}
               </div>
             ))}
           </div>

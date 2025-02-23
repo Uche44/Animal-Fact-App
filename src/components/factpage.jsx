@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SearchPage from "./SearchPage";
 import { useSavedFacts } from "../context/SavedFactsContext";
 import toast from "react-hot-toast";
-// my api key for api ninja   PkZK8NV+pP+PaeVYU8E2ig==jHkb6rWkBfo8Lmy6
+
 
 // entire page
 export default function Factpage() {
@@ -20,7 +20,8 @@ export default function Factpage() {
   useEffect(() => {
     async function getFact() {
       try {
-        const response = await fetch("http://localhost:3000/animals");
+        // const response = await fetch("http://localhost:3000/animals");
+          const response = await fetch("/db.json");
         const facts = await response.json();
 
         if (facts && facts.length) setFacts(facts);
@@ -57,7 +58,7 @@ export default function Factpage() {
     if (facts.length > 0) {
       saveFact(facts[currentIndex]);
       toast.success("Fact Saved");
-      console.log("fact saved");
+     
     } else {
       console.error("save failed");
     }
@@ -74,7 +75,7 @@ export default function Factpage() {
           setIsLiked={setIsLiked}
         />
       ) : (
-        <section className="fact-page flex flex-col items-center">
+        <section className="fact-page flex flex-col items-center ">
           <div className="save fixed right-4 top-[4.5rem] h-[3rem] w-[3rem] bg-white rounded-[10px] flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
             <FaSave
               className="text-[1.6rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
@@ -96,9 +97,11 @@ export default function Factpage() {
           </div>
           <div className="animal-image h-[20rem] border-4 w-5/6 border-amber-500  rounded-full mt-16 sm:h-64 sm:w-64 flex items-center justify-center sm: sm:mb-[2rem]">
             <img
-              src={`http://localhost:3000/${facts[currentIndex]["image"]}`}
+              // src={`http://localhost:3000/${facts[currentIndex]["image"]}`}
+              src={facts[currentIndex]["image"]}
               className="w-[90%] h-[90%] rounded-full"
               alt={facts[currentIndex]["image"]}
+              loading="lazy"
             />
           </div>
           {/* fact card */}

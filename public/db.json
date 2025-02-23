@@ -1,0 +1,702 @@
+[
+  {
+    "id": 1,
+    "name": "Elephant",
+    "fact": "Elephants are the largest land animals on Earth.",
+    "image": "/images/elephant.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 2,
+    "name": "Cheetah",
+    "fact": "Cheetahs are the fastest land animals, reaching speeds up to 70 mph.",
+    "image": "/images/cheetah.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 3,
+    "name": "Shark",
+    "fact": "Sharks have been around for over 400 million years.",
+    "image": "/images/shark.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 4,
+    "name": "Eagle",
+    "fact": "Eagles have excellent eyesight that allows them to spot prey from miles away.",
+    "image": "/images/eagle.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 5,
+    "name": "Panda",
+    "fact": "Pandas eat up to 12 hours a day and their diet is 99% bamboo.",
+    "image": "/images/panda.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 6,
+    "name": "Penguin",
+    "fact": "Penguins are flightless birds that swim instead of fly.",
+    "image": "https://example.com/images/penguin.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 7,
+    "name": "Crocodile",
+    "fact": "Crocodiles can live up to 70 years.",
+    "image": "/images/crocodile.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 8,
+    "name": "Koala",
+    "fact": "Koalas sleep up to 20 hours a day.",
+    "image": "/images/koala.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 9,
+    "name": "Butterfly",
+    "fact": "Butterflies taste with their feet.",
+    "image": "/images/butterfly.jpg",
+    "category": "insects"
+  },
+  {
+    "id": 10,
+    "name": "Whale",
+    "fact": "The blue whale is the largest animal ever to live on Earth.",
+    "image": "/images/whale.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 11,
+    "name": "Lion",
+    "fact": "Lions are the only big cats that live in groups called prides.",
+    "image": "/images/lion.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 12,
+    "name": "Jellyfish",
+    "fact": "Jellyfish have been around for over 500 million years.",
+    "image": "/images/jellyfish.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 13,
+    "name": "Falcon",
+    "fact": "The peregrine falcon is the fastest bird, reaching speeds of over 200 mph in a dive.",
+    "image": "/images/falcon.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 14,
+    "name": "Owl",
+    "fact": "Owls can rotate their heads up to 270 degrees.",
+    "image": "/images/owl.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 15,
+    "name": "Snake",
+    "fact": "Some snakes can sense heat through specialized pits on their heads.",
+    "image": "/images/snake.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 16,
+    "name": "Turtle",
+    "fact": "Sea turtles can live to be over 100 years old.",
+    "image": "/images/turtle.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 17,
+    "name": "Rabbit",
+    "fact": "Rabbits can turn their ears 180 degrees.",
+    "image": "/images/rabbit.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 18,
+    "name": "Giraffe",
+    "fact": "Giraffes have the longest necks of any land animal, up to 6 feet long.",
+    "image": "/images/giraffe.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 19,
+    "name": "Ant",
+    "fact": "Ants can carry objects 50 times their body weight.",
+    "image": "/images/ant.jpg",
+    "category": "insects"
+  },
+  {
+    "id": 20,
+    "name": "Dolphin",
+    "fact": "Dolphins are highly intelligent and can recognize themselves in mirrors.",
+    "image": "https://example.com/images/dolphin.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 21,
+    "name": "Peacock",
+    "fact": "Peacocks use their colorful feathers to attract mates.",
+    "image": "/images/peacock.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 22,
+    "name": "Alligator",
+    "fact": "Alligators can live up to 50 years in the wild.",
+    "image": "/images/alligator.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 23,
+    "name": "Wolf",
+    "fact": "Wolves are known for their complex social structures.",
+    "image": "/images/wolf.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 24,
+    "name": "Octopus",
+    "fact": "Octopuses have three hearts and blue blood.",
+    "image": "/images/octopus.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 25,
+    "name": "Kangaroo",
+    "fact": "Kangaroos can jump up to 30 feet in a single leap.",
+    "image": "https://example.com/images/kangaroo.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 26,
+    "name": "Tiger",
+    "fact": "No two tigers have the same stripe pattern.",
+    "image": "/images/tiger.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 27,
+    "name": "Parrot",
+    "fact": "Parrots can mimic human speech.",
+    "image": "/images/parrot.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 28,
+    "name": "Hippopotamus",
+    "fact": "Hippos can hold their breath for up to 5 minutes underwater.",
+    "image": "/images/hippo.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 29,
+    "name": "Eel",
+    "fact": "Electric eels can generate shocks up to 600 volts.",
+    "image": "/images/eel.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 30,
+    "name": "Seahorse",
+    "fact": "Male seahorses carry and give birth to their young.",
+    "image": "/images/seahorse.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 31,
+    "name": "Bat",
+    "fact": "Bats are the only mammals capable of true flight.",
+    "image": "/images/bat.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 32,
+    "name": "Crab",
+    "fact": "Crabs can walk sideways.",
+    "image": "/images/crab.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 33,
+    "name": "Meerkat",
+    "fact": "Meerkats stand on their hind legs to spot predators.",
+    "image": "/images/meerkat.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 34,
+    "name": "Starfish",
+    "fact": "Starfish can regenerate lost arms.",
+    "image": "/images/starfish.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 35,
+    "name": "Sloth",
+    "fact": "Sloths are the slowest mammals on Earth.",
+    "image": "/images/sloth.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 36,
+    "name": "Chameleon",
+    "fact": "Chameleons can change the color of their skin.",
+    "image": "/images/chameleon.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 37,
+    "name": "Raccoon",
+    "fact": "Raccoons are known for their dexterous front paws.",
+    "image": "/images/raccoon.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 38,
+    "name": "Antelope",
+    "fact": "Antelopes are known for their speed and agility.",
+    "image": "/images/antelope.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 39,
+    "name": "Platypus",
+    "fact": "Platypuses are one of the few mammals that lay eggs.",
+    "image": "/images/platypus.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 40,
+    "name": "Salmon",
+    "fact": "Salmon return to the exact spot where they were born to spawn.",
+    "image": "/images/salmon.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 41,
+    "name": "Platypus",
+    "fact": "Platypuses are one of the few mammals that lay eggs.",
+    "image": "/images/platypus.jpg",
+    "category": "Mammal"
+  },
+  {
+    "id": 42,
+    "name": "Raccoon",
+    "fact": "Raccoons can open jars and locks.",
+    "image": "/images/raccoon.jpg",
+    "category": "Mammals"
+  },
+  {
+    "id": 43,
+    "name": "Goat",
+    "fact": "Goats have rectangular pupils.",
+    "image": "/images/goat.jpg",
+    "category": "Mammal"
+  },
+  {
+    "id": 44,
+    "name": "Deer",
+    "fact": "Deer shed and regrow their antlers every year.",
+    "image": "/images/deer.jpg",
+    "category": "Mammal"
+  },
+  {
+    "id": 45,
+    "name": "Toad",
+    "fact": "Some toads can secrete toxins as a defense mechanism.",
+    "image": "/images/toad.jpg",
+    "category": "Amphibian"
+  },
+  {
+    "id": 46,
+    "name": "Horse",
+    "fact": "Horses can sleep both standing up and lying down.",
+    "image": "/images/horse.jpg",
+    "category": "Mammal"
+  },
+  {
+    "id": 47,
+    "name": "Snail",
+    "fact": "Some snails can sleep for three years.",
+    "image": "/images/snail.jpg",
+    "category": "Mollusc"
+  },
+  {
+    "id": 48,
+    "name": "Tortoise",
+    "fact": "Some tortoises can live for over 150 years.",
+    "image": "/images/tortoise.jpg",
+    "category": "reptile"
+  },
+  {
+    "id": 49,
+    "name": "Lizard",
+    "fact": "Some lizards can regenerate their tails.",
+    "image": "/images/lizard.jpg",
+    "category": "reptile"
+  },
+  {
+    "id": 50,
+    "name": "Crab",
+    "fact": "Crabs can walk sideways.",
+    "image": "/images/crab.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 51,
+    "name": "Parrot",
+    "fact": "Parrots can mimic human speech and other sounds.",
+    "image": "/images/parrot.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 52,
+    "name": "Whale",
+    "fact": "The blue whale is the largest animal ever to live on Earth.",
+    "image": "/images/whale.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 53,
+    "name": "Frog",
+    "fact": "Some frogs can freeze solid and still survive.",
+    "image": "/images/frog.jpg",
+    "category": "amphibians"
+  },
+  {
+    "id": 54,
+    "name": "Butterfly",
+    "fact": "Butterflies can taste with their feet.",
+    "image": "/images/butterfly.jpg",
+    "category": "insects"
+  },
+  {
+    "id": 55,
+    "name": "Zebra",
+    "fact": "No two zebras have the same stripe pattern.",
+    "image": "/images/zebra.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 56,
+    "name": "Eel",
+    "fact": "Electric eels can generate shocks up to 600 volts.",
+    "image": "/images/eel.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 57,
+    "name": "Armadillo",
+    "fact": "Armadillos can roll into a ball for protection.",
+    "image": "https://example.com/images/armadillo.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 58,
+    "name": "Koala",
+    "fact": "Koalas sleep up to 20 hours a day.",
+    "image": "/images/koala.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 59,
+    "name": "Ostrich",
+    "fact": "Ostriches have the largest eyes of any land animal.",
+    "image": "/images/ostrich.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 60,
+    "name": "Antelope",
+    "fact": "Antelopes are some of the fastest land animals.",
+    "image": "/images/antelope.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 61,
+    "name": "Tapir",
+    "fact": "Tapirs have long, flexible snouts for grabbing leaves and fruit.",
+    "image": "/images/tapir.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 62,
+    "name": "Albatross",
+    "fact": "Albatrosses can fly for hours without flapping their wings.",
+    "image": "/images/albatross.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 63,
+    "name": "Axolotl",
+    "fact": "Axolotls can regenerate entire limbs.",
+    "image": "/images/axolotl.jpg",
+    "category": "amphibians"
+  },
+  {
+    "id": 64,
+    "name": "Beaver",
+    "fact": "Beavers use their tails for balance, swimming, and communication.",
+    "image": "https://example.com/images/beaver.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 65,
+    "name": "Meerkat",
+    "fact": "Meerkats stand on their hind legs to keep watch for predators.",
+    "image": "/images/meerkat.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 66,
+    "name": "Starfish",
+    "fact": "Starfish can regrow lost arms.",
+    "image": "/images/Starfish.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 67,
+    "name": "Orangutan",
+    "fact": "Orangutans are highly intelligent and use tools in the wild.",
+    "image": "/images/orangutan.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 68,
+    "name": "Komodo Dragon",
+    "fact": "Komodo dragons have venomous bites.",
+    "image": "/images/komododragon.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 69,
+    "name": "Sea Otter",
+    "fact": "Sea otters hold hands while sleeping to stay together.",
+    "image": "/images/otter.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 70,
+    "name": "Macaw",
+    "fact": "Macaws have strong beaks that can crack nuts.",
+    "image": "/images/macaw.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 71,
+    "name": "Gazelle",
+    "fact": "Gazelles can run up to 60 mph to escape predators.",
+    "image": "/images/gazelle.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 72,
+    "name": "Platypus",
+    "fact": "Platypuses are one of the few mammals that lay eggs.",
+    "image": "/images/platypus.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 73,
+    "name": "Gecko",
+    "fact": "Geckos can climb smooth surfaces using specialized toe pads.",
+    "image": "/images/gecko.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 74,
+    "name": "Woodpecker",
+    "fact": "Woodpeckers can peck up to 20 times per second.",
+    "image": "/images/woodpecker.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 75,
+    "name": "Hawk",
+    "fact": "Hawks have excellent eyesight for spotting prey.",
+    "image": "https://example.com/images/hawk.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 76,
+    "name": "Walrus",
+    "fact": "Walruses use their tusks to climb out of icy water.",
+    "image": "/images/walrus.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 77,
+    "name": "Coyote",
+    "fact": "Coyotes are highly adaptable and can live in urban areas.",
+    "image": "https://example.com/images/coyote.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 78,
+    "name": "Salamander",
+    "fact": "Some salamanders can regrow their tails and limbs.",
+    "image": "https://example.com/images/salamander.jpg",
+    "category": "amphibians"
+  },
+  {
+    "id": 79,
+    "name": "Raven",
+    "fact": "Ravens are one of the most intelligent birds.",
+    "image": "https://example.com/images/raven.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 80,
+    "name": "Porcupine",
+    "fact": "Porcupines have quills as a defense mechanism.",
+    "image": "https://example.com/images/porcupine.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 81,
+    "name": "Pelican",
+    "fact": "Pelicans have a large pouch under their beak for catching fish.",
+    "image": "https://example.com/images/pelican.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 82,
+    "name": "Warthog",
+    "fact": "Warthogs use their tusks for digging and defense.",
+    "image": "https://example.com/images/warthog.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 83,
+    "name": "Toucan",
+    "fact": "Toucans use their large bills to reach fruit on branches.",
+    "image": "https://example.com/images/toucan.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 84,
+    "name": "Seal",
+    "fact": "Seals can hold their breath for over 30 minutes underwater.",
+    "image": "https://example.com/images/seal.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 85,
+    "name": "Rhinoceros",
+    "fact": "Rhinoceroses have thick skin that acts as natural armor.",
+    "image": "https://example.com/images/rhinoceros.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 86,
+    "name": "Chameleon",
+    "fact": "Chameleons can change color to blend into their surroundings.",
+    "image": "/images/chameleon.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 87,
+    "name": "Bat",
+    "fact": "Bats are the only mammals capable of sustained flight.",
+    "image": "/images/bat.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 88,
+    "name": "Penguin",
+    "fact": "Penguins are excellent swimmers and can dive to great depths.",
+    "image": "https://example.com/images/penguin.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 89,
+    "name": "Caterpillar",
+    "fact": "Caterpillars have up to 4,000 muscles in their body.",
+    "image": "https://example.com/images/caterpillar.jpg",
+    "category": "insects"
+  },
+  {
+    "id": 90,
+    "name": "Snake",
+    "fact": "Some snakes can sense heat through pits near their nostrils.",
+    "image": "/images/snake.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 91,
+    "name": "Otter",
+    "fact": "Otters have the densest fur of any animal.",
+    "image": "https://example.com/images/otter.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 92,
+    "name": "Dragonfly",
+    "fact": "Dragonflies can fly in all directions, including backward.",
+    "image": "https://example.com/images/dragonfly.jpg",
+    "category": "insects"
+  },
+  {
+    "id": 93,
+    "name": "Bear",
+    "fact": "Bears have an excellent sense of smell, even better than dogs.",
+    "image": "https://example.com/images/bear.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 94,
+    "name": "Duck",
+    "fact": "Duck quacks have an echo.",
+    "image": "https://example.com/images/duck.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 95,
+    "name": "Tortoise",
+    "fact": "Tortoises can live for over 150 years.",
+    "image": "/images/tortoise.jpg",
+    "category": "reptiles"
+  },
+  {
+    "id": 96,
+    "name": "Crab",
+    "fact": "Crabs can walk sideways.",
+    "image": "/images/crab.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 97,
+    "name": "Hyena",
+    "fact": "Hyenas have incredibly strong jaws for crushing bones.",
+    "image": "https://example.com/images/hyena.jpg",
+    "category": "mammals"
+  },
+  {
+    "id": 98,
+    "name": "Flounder",
+    "fact": "Flounders' eyes migrate to one side of their body as they grow.",
+    "image": "https://example.com/images/flounder.jpg",
+    "category": "marine"
+  },
+  {
+    "id": 99,
+    "name": "Vulture",
+    "fact": "Vultures have stomach acid strong enough to digest bones.",
+    "image": "https://example.com/images/vulture.jpg",
+    "category": "birds"
+  },
+  {
+    "id": 100,
+    "name": "Emu",
+    "fact": "Emus are the second-largest birds in the world.",
+    "image": "/images/Emu.jpg",
+    "category": "birds"
+  }
+]
