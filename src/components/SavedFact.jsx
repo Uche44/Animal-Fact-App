@@ -5,7 +5,7 @@ const SavedFact = () => {
   const { savedFacts, removeFact } = useSavedFacts();
   return (
     <>
-      <div className="banner flex h-16 w-full bg-amber-600 px-4 items-center fixed z-10">
+      <div className="banner flex h-16 w-full bg-amber-600 px-4 items-center">
         <Link
           to="/"
           className=" text-amber-900 w-9 h-9 bg-slate-100 grid place-content-center rounded-full"
@@ -23,7 +23,7 @@ const SavedFact = () => {
           savedFacts.map((fact, index) => (
             <div
               key={index}
-              className="bg-amber-700 px-4 py-4 text-slate-200 relative rounded-[15px]"
+              className="bg-amber-700 px-4 py-4 text-slate-200 mt-16 relative rounded-[15px]"
             >
               <img
                 src={fact.image}

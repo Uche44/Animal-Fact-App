@@ -5,7 +5,6 @@ import SearchPage from "./SearchPage";
 import { useSavedFacts } from "../context/SavedFactsContext";
 import toast from "react-hot-toast";
 
-
 // entire page
 export default function Factpage() {
   const [facts, setFacts] = useState([]);
@@ -21,7 +20,7 @@ export default function Factpage() {
     async function getFact() {
       try {
         // const response = await fetch("http://localhost:3000/animals");
-          const response = await fetch("/db.json");
+        const response = await fetch("/db.json");
         const facts = await response.json();
 
         if (facts && facts.length) setFacts(facts);
@@ -58,7 +57,6 @@ export default function Factpage() {
     if (facts.length > 0) {
       saveFact(facts[currentIndex]);
       toast.success("Fact Saved");
-     
     } else {
       console.error("save failed");
     }
@@ -75,7 +73,7 @@ export default function Factpage() {
           setIsLiked={setIsLiked}
         />
       ) : (
-        <section className="fact-page flex flex-col items-center ">
+        <section className="fact-page flex flex-col items-center relative">
           <div className="save fixed right-4 top-[4.5rem] h-[3rem] w-[3rem] bg-white rounded-[10px] flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
             <FaSave
               className="text-[1.6rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
