@@ -23,7 +23,7 @@ const SavedFact = () => {
           savedFacts.map((fact, index) => (
             <div
               key={index}
-              className="bg-amber-700 px-4 py-4 text-slate-200 mt-16 relative rounded-[15px]"
+              className="bg-amber-700 px-4 py-4 text-slate-200 relative rounded-[15px]"
             >
               <img
                 src={fact.image}
