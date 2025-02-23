@@ -4,11 +4,11 @@ import { FaArrowLeft } from "react-icons/fa";
 const SavedFact = () => {
   const { savedFacts, removeFact } = useSavedFacts();
   return (
-    <section className=" min-h-full w-full fixed bg-slate-100">
-      <div className="banner flex h-16 w-full bg-amber-400 px-4 items-center">
+    <>
+      <div className="banner flex h-16 w-full bg-amber-600 px-4 items-center fixed z-10">
         <Link
           to="/"
-          className=" text-amber-800 underline"
+          className=" text-amber-900 w-9 h-9 bg-slate-100 grid place-content-center rounded-full"
         >
           <FaArrowLeft className="text-[1.2rem] font-[900]" />
         </Link>
@@ -42,7 +42,7 @@ const SavedFact = () => {
           ))
         )}
       </section>
-    </section>
+    </>
   );
 };
 
