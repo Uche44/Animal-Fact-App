@@ -15,6 +15,7 @@ const SearchPage = ({
   const [inputValue, setInputValue] = useState("");
   const [filterText, setFilterText] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
+  const [message, setMessage] = useState("");
 
   const types = [
     "All",
@@ -33,18 +34,58 @@ const SearchPage = ({
     setFilterText(e.target.value.toLowerCase());
     setInputValue(e.target.value.toLowerCase());
   };
+  // const handleFilter = () => {
+  // const filtered =
+  //   filterText === "all"
+  //     ? facts
+  //     : // eslint-disable-next-line react/prop-types
+  //       facts.filter(
+  //         (fact) =>
+  //           fact.category.toLowerCase().includes(filterText) ||
+  //           fact.name.toLowerCase().includes(filterText)
+  //       );
+  //        setFilteredFacts(filtered);
+
+  //   const handleFilter = () => {
+  //     const filtered =
+  //       filterText === "all"
+  //         ? facts
+  //         : facts.filter(
+  //             (fact) =>
+  //               fact.category.toLowerCase().includes(filterText) ||
+  //               fact.name.toLowerCase().includes(filterText)
+  //           )
+
+  //     if (filtered.length === 0) {
+  //       setFilteredFacts([{ name: "No animal found", category: "" }]); // Placeholder object
+  //     } else {
+  //       setFilteredFacts(filtered);
+  //     }
+  //   };
+  // };
+
   const handleFilter = () => {
-    const filtered =
-      filterText === "all"
-        ? facts
-        : // eslint-disable-next-line react/prop-types
-          facts.filter(
-            (fact) =>
-              fact.category.toLowerCase().includes(filterText) ||
-              fact.name.toLowerCase().includes(filterText)
-          );
-    setFilteredFacts(filtered);
+    if (filterText === "all") {
+      setFilteredFacts(facts);
+      setMessage(""); // No message when showing all
+      return;
+    }
+
+    const matchingFacts = facts.filter(
+      (fact) =>
+        fact.category.toLowerCase().includes(filterText) ||
+        fact.name.toLowerCase().includes(filterText)
+    );
+
+    if (matchingFacts.length === 0) {
+      setMessage("No animal found.");
+      setFilteredFacts([]); // Ensure empty list when no match is found
+    } else {
+      setMessage(""); // Clear message when matches are found
+      setFilteredFacts(matchingFacts);
+    }
   };
+
   useEffect(() => {
     handleFilter();
   }, [filterText, facts]);
@@ -68,6 +109,7 @@ const SearchPage = ({
             />
           </div>
 
+          {message && <p>{message}</p>}
           {/* Filtered facts display */}
           <div className="mt-6 mx-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredFacts.map((fact, index) => (
@@ -123,7 +165,7 @@ const SearchPage = ({
               .map((type, index) => (
                 <button
                   key={index}
-                  className="h-[3.3rem] w-100 text-amber-700 font-bold text-[18px] rounded-[10px] border-none hover:bg-amber-300 bg-amber-200 active:scale-90 transition-transform duration-150"
+                  className="h-[3rem] w-100 text-amber-700 font-bold text-[18px] rounded-[10px] border-none hover:bg-amber-300 bg-amber-200 active:scale-90 transition-transform duration-150"
                   value={type}
                   onClick={handleClick}
                 >
