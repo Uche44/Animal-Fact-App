@@ -15,16 +15,17 @@ export default function Factpage() {
   const [filteredFacts, setFilteredFacts] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
   const { saveFact } = useSavedFacts();
+
   const navigate = useNavigate();
+
   useEffect(() => {
     async function getFact() {
       try {
-        // const response = await fetch("http://localhost:3000/animals");
         const response = await fetch("/db.json");
         const facts = await response.json();
 
         if (facts && facts.length) setFacts(facts);
-        // setFilteredFacts(facts);
+
         setIsLoading(false);
       } catch (error) {
         console.log("error", error);
@@ -35,7 +36,8 @@ export default function Factpage() {
   }, [facts]);
 
   const changeFact = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % facts.length);
+    // setCurrentIndex((prevIndex) => (prevIndex + 1) % facts.length);
+    setCurrentIndex(() => Math.floor(Math.random() * facts.length));
     if (facts.length === 0) {
       return <p>No facts available</p>;
     }
@@ -76,7 +78,7 @@ export default function Factpage() {
         <section className="fact-page flex flex-col items-center relative">
           <div className="save fixed right-4 top-[4.5rem] h-[3rem] w-[3rem] bg-white rounded-[10px] flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
             <FaSave
-              className="text-[1.6rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
+              className="text-[1.4rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
               title="saved facts"
               onClick={() => navigate("./SavedFact.jsx")}
             />
@@ -85,17 +87,16 @@ export default function Factpage() {
           <div className="search fixed right-4 top-4 h-[3rem] w-[3rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
             <FaSearch
               onClick={goToSearchPage}
-              className="search-icon text-[1.6rem] text-amber-700 sm:text-[2rem]"
+              className="search-icon text-[1.4rem] text-amber-700 sm:text-[2rem]"
             />
           </div>
-          <div className="animal-name w-fit h-16 flex items-center justify-center fixed top-10 shadow-slate-500 bg-white rounded-[1rem] p-2">
+          <div className="animal-name w-fit h-16 flex items-center justify-center fixed top-10 shadow-slate-500 bg-white rounded-[1rem] px-3 py-3">
             <h4 className="text-[2.8rem] font-bold text-amber-800 ">
               {facts[currentIndex].name}
             </h4>
           </div>
           <div className="animal-image h-[20rem] border-4 w-5/6 border-amber-500  rounded-full mt-16 sm:h-64 sm:w-64 flex items-center justify-center sm: sm:mb-[2rem]">
             <img
-              // src={`http://localhost:3000/${facts[currentIndex]["image"]}`}
               src={facts[currentIndex]["image"]}
               className="w-[90%] h-[90%] rounded-full"
               alt={facts[currentIndex]["image"]}
@@ -105,7 +106,7 @@ export default function Factpage() {
           {/* fact card */}
           <section className="fact-card h-5/6 w-[28rem] rounded-t-full text-center bg-white -z-10 fixed top-56 flex flex-col items-center px-[4rem] sm:w-[80%] sm:h-fit sm:rounded-[3rem] sm:static sm:px-[1rem] sm:py-[1rem]">
             <h3 className="dyk mt-44 text-[2rem] font-[800] mb-3 text-amber-950 sm:mt-[1rem]">
-              Did You Know
+              Did You Know?
             </h3>
             <div className="fact-container h-[7rem] w-[100%] pt-2 px-2 rounded-[1rem]">
               <p className="text-[1.3rem] font-semibold text-center">

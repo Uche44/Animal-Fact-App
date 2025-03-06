@@ -3,17 +3,18 @@ import { FaSearch } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 
 const SearchPage = ({
+  // eslint-disable-next-line react/prop-types
   onBack,
+  // eslint-disable-next-line react/prop-types
   facts,
+  // eslint-disable-next-line react/prop-types
   filteredFacts,
+  // eslint-disable-next-line react/prop-types
   setFilteredFacts,
-  isLiked,
-  setIsLiked,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [filterText, setFilterText] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
-
 
   const types = [
     "All",
@@ -36,8 +37,11 @@ const SearchPage = ({
     const filtered =
       filterText === "all"
         ? facts
-        : facts.filter((fact) =>
-            fact.category.toLowerCase().includes(filterText)
+        : // eslint-disable-next-line react/prop-types
+          facts.filter(
+            (fact) =>
+              fact.category.toLowerCase().includes(filterText) ||
+              fact.name.toLowerCase().includes(filterText)
           );
     setFilteredFacts(filtered);
   };
@@ -72,7 +76,6 @@ const SearchPage = ({
                 className="fact-card p-4 rounded-lg shadow-md border border-amber-300 bg-white relative"
               >
                 <img
-                  // src={`http://localhost:3000/${fact.image}`}
                   src={fact.image}
                   alt={fact.name}
                   className="w-full h-48 object-cover rounded-lg mb-2"
@@ -81,19 +84,6 @@ const SearchPage = ({
                   {fact.name}
                 </h4>
                 <p className="text-sm text-amber-700 mb-6">{fact.fact}</p>
-                {/* <FaHeart
-                  onClick={(e) => setIsLiked(true)}
-                  style={{
-                    color: isLiked ? "#EC4899" : "#92400E",
-                    transition: "color 0.3s ease",
-                  }}
-                  className="text-[1.3rem] cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 absolute bottom-4 right-11"
-                  title="like"
-                />
-                <FaSave
-                  className="text-[1.3rem]  text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 absolute bottom-4 right-4"
-                  title="save fact"
-                /> */}
               </div>
             ))}
           </div>
@@ -111,9 +101,9 @@ const SearchPage = ({
         <section className="h-[100vh] w-full py-6 px-4 bg-white">
           <div className="search h-[3.5rem] w-full flex items-center gap-4 ">
             <input
-              className="h-full w-[80%] rounded-full px-4 text-[1.1rem] bg-amber-300 text-amber-700 font-[500]"
+              className="h-full w-[80%] rounded-full px-4 text-[1.1rem] bg-amber-300 text-amber-700 font-[500] focus-within:outline-none"
               type="text"
-              placeholder="search by category"
+              placeholder="search animal..."
               value={inputValue}
               onChange={handleChange}
             />
