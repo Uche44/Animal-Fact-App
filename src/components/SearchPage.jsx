@@ -99,9 +99,9 @@ const SearchPage = ({
       ) : (
         // search page
         <section className="h-[100vh] w-full py-6 px-4 bg-white">
-          <div className="search h-[3.5rem] w-full flex items-center gap-4 ">
+          <div className="search h-[2.8rem] w-full flex items-center gap-4 ">
             <input
-              className="h-full w-[80%] rounded-full px-4 text-[1.1rem] bg-amber-300 text-amber-700 font-[500] focus-within:outline-none"
+              className="h-full w-[80%] rounded-[4rem] px-4 text-[1.1rem] bg-amber-300 text-amber-700 font-[500] focus-within:outline-none"
               type="text"
               placeholder="search animal..."
               value={inputValue}
@@ -109,7 +109,7 @@ const SearchPage = ({
             />
             <div className="search h-full w-[3.5rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:bg-amber-200 cursor-pointer">
               <FaSearch
-                className="search-icon text-[2.1rem] text-amber-700 sm:text-[2rem]"
+                className="search-icon text-[1.8rem] text-amber-700 sm:text-[2rem]"
                 onClick={() => {
                   setHasSearched(true);
                 }}

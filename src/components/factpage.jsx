@@ -38,9 +38,9 @@ export default function Factpage() {
   const changeFact = () => {
     // setCurrentIndex((prevIndex) => (prevIndex + 1) % facts.length);
     setCurrentIndex(() => Math.floor(Math.random() * facts.length));
-    if (facts.length === 0) {
-      return <p>No facts available</p>;
-    }
+    // if (facts.length === 0) {
+    //   return <p>No facts available</p>;
+    // }
     setIsLiked(false);
   };
   if (isLoading) {
@@ -76,7 +76,7 @@ export default function Factpage() {
         />
       ) : (
         <section className="fact-page flex flex-col items-center relative">
-          <div className="save fixed right-4 top-[4.5rem] h-[3rem] w-[3rem] bg-white rounded-[10px] flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
+          <div className="save fixed right-4 top-[4.5rem] h-[2.5rem] w-[2.5rem] bg-white rounded-[10px] flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
             <FaSave
               className="text-[1.4rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
               title="saved facts"
@@ -84,7 +84,7 @@ export default function Factpage() {
             />
           </div>
           {/* search icon */}
-          <div className="search fixed right-4 top-4 h-[3rem] w-[3rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
+          <div className="search fixed right-4 top-4 h-[2.5rem] w-[2.5rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
             <FaSearch
               onClick={goToSearchPage}
               className="search-icon text-[1.4rem] text-amber-700 sm:text-[2rem]"
@@ -105,7 +105,7 @@ export default function Factpage() {
           </div>
           {/* fact card */}
           <section className="fact-card h-5/6 w-[28rem] rounded-t-full text-center bg-white -z-10 fixed top-56 flex flex-col items-center px-[4rem] sm:w-[80%] sm:h-fit sm:rounded-[3rem] sm:static sm:px-[1rem] sm:py-[1rem]">
-            <h3 className="dyk mt-44 text-[2rem] font-[800] mb-3 text-amber-950 sm:mt-[1rem]">
+            <h3 className="dyk mt-44 text-[2rem] font-[900] mb-3 text-amber-950 sm:mt-[1rem]">
               Did You Know?
             </h3>
             <div className="fact-container h-[7rem] w-[100%] pt-2 px-2 rounded-[1rem]">
@@ -118,7 +118,7 @@ export default function Factpage() {
               <div className="icons w-[4rem] h-[2rem] flex self-end justify-between">
                 <FaDownload
                   onClick={handleSave}
-                  className="text-[1.6rem] left-[1rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
+                  className="text-[1.4rem] left-[1rem] text-amber-700 cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125"
                   title="save fact"
                 />
                 <FaHeart
@@ -127,7 +127,7 @@ export default function Factpage() {
                     color: isLiked ? "#EC4899" : "#92400E",
                     transition: "color 0.3s ease",
                   }}
-                  className="text-[1.6rem] bottom-[1rem] left-[3.5rem]  cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 "
+                  className="text-[1.4rem] bottom-[1rem] left-[3.5rem]  cursor-pointer active:scale-90 transition-transform duration-150 hover:brightness-125 "
                   title="like"
                 />
               </div>
