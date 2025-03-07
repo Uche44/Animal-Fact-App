@@ -84,7 +84,7 @@ export default function Factpage() {
             />
           </div>
           {/* search icon */}
-          <div className="search fixed right-4 top-4 h-[2.5rem] w-[2.5rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
+          <div className="search fixed right-4 top-6 h-[2.5rem] w-[2.5rem] rounded-4 bg-white rounded-full flex items-center justify-center sm:h-[3rem] sm:w-[3rem] hover:brightness-90 cursor-pointer">
             <FaSearch
               onClick={goToSearchPage}
               className="search-icon text-[1.4rem] text-amber-700 sm:text-[2rem]"
